@@ -22,7 +22,7 @@ Following best practice and using IAM user with admin and billing policies attac
 
 High level Architecture design for all stakeholders.
 
-![conceptual-diagram](assets/week0-conceptual-diagram.png)
+![conceptual](_docs/assets/CRUDDUR-Napkin-flow.png)
 
 ### Logical Architecture Flow
 
