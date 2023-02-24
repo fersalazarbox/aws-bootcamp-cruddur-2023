@@ -14,15 +14,36 @@ Overall, the foundational tasks related to billing, security, and architecture t
 
 
 ## Required Tasks:
+- [X] Re-create Cruddur's Conceptual Diagram 
+- [X] Re-create Cruddur's Logical Diagram 
+- [X] Install and verify the AWS CLI on Gitpod
+- [X] Create Billing and Budget Alarms 
 
-- Completed all the required tasks.
+
+## Install and verify AWS CLI 
+To install the AWS CLI on our gitpod workspace we added a gitpod **task** using by adding the following configuration into our `.gitpod.yml` file: 
+
+```yml
+tasks:
+  - name: aws-cli
+    env:
+      AWS_CLI_AUTO_PROMPT: on-partial
+    init: |
+      cd /workspace
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+      cd $THEIA_WORKSPACE_ROOT
+...
+```
+
+To connect our AWS account we had to provide Environment variables into GitPod
 
 ### Cloud governace, IAM
 
-Following best practice and using IAM user with admin and billing policies attached instead of root account. MFA enabled for user account.
+MFA enabled for root and user account. Following best practices and using IAM user with admin and billing policies attached instead of root account. 
 
-![IAM-user](assets/week0-user.png)
-![admin-billing](assets/week0-adminbilling.png)
+
 
 ### Conceptual Flow
 
@@ -34,31 +55,23 @@ High level Architecture design for all stakeholders.
 
 Detailed design of the architecture for the technical team.
 
-![main-diagram](assets/week0-logical-diagram-main.png)
 
 ### Budget And Billing Alarm creation
 
-![budget](assets/budget-aws.png)
-Created budget.
-
-![billing-alert](assets/week0-billing-alert.png)
-Created billing alert.
 
 ## Challenges:
 
 Reviewed all the questions of each pillars in the Well Architected Tool
 
-![well-architected-tool](assets/week0-well-architected.png)
+
 
 ### CI-CD Pipeline Design
 
 Logical CI-CD pipeline for the application.
 
-![pipeline-diagram](assets/week0-logical-diagram-pipeline.png)
 
 ## Obstacles:
 
-I found to navigate through bash console it was my first time getting hands on this, also I got problems installing AWS on windows but finally I could manage it.
 
-## Flowcharts
+## Flowcharts from Luchidchart
 [My Diagrams from LucidChart](https://lucid.app/folder/invitations/accept/inv_f0c1c240-0da6-4a90-98de-e729db89f7d1)
